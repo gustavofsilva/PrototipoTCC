@@ -228,15 +228,14 @@ namespace PrototipoTCC
             driver.FindElement(By.Name("ctl00$MainContent$ButtonConfirma")).Click();
             waitMiliSegundos(1000);
         }
-        public OperaDriver startBrowser()
+        public ChromeDriver startBrowser()
         {
-            if (Environment.OSVersion.ToString().Contains("Mac") || Environment.OSVersion.ToString().Contains("Apple") || !Environment.OSVersion.ToString().Contains("Windows") ||
-                Environment.OSVersion.ToString().Contains("MacOS") || Environment.OSVersion.ToString().Contains("mac")
+            if (Environment.OSVersion.ToString().Contains("Mac") || Environment.OSVersion.ToString().Contains("MacOS") || Environment.OSVersion.ToString().Contains("mac")
                 || Environment.OSVersion.ToString().Contains("macos"))
             {
-                return new OperaDriver("C:\\Users\\PICHAU\\source\\repos\\PrototipoTCC\\PrototipoTCC\\drivermac");
+                return new ChromeDriver("C:\\Users\\PICHAU\\source\\repos\\PrototipoTCC\\PrototipoTCC\\drivermac");
             }
-            return new OperaDriver("C:\\Users\\PICHAU\\source\\repos\\PrototipoTCC\\PrototipoTCC\\");
+            return new ChromeDriver("C:\\Users\\PICHAU\\source\\repos\\PrototipoTCC\\PrototipoTCC\\");
 
 
         }
