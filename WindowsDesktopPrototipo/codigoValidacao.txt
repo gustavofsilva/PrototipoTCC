@@ -1,0 +1,83 @@
+if (pessoa.nome.Any(char.IsNumber))
+            {
+                LabelNome.Text = 'Nome com números!';
+                return;
+            } else
+            {
+                if (pessoa.nome == '')
+                {
+                    LabelNome.Text = 'Nome Vazio!';
+                    return;
+                } 
+            }
+            if (pessoa.email == '')
+            {
+                LabelEmail.Text = 'Email vazio!';
+                return;
+            } else
+            {
+                if (!pessoa.email.Contains('@'))
+                {
+                    LabelEmail.Text = 'Email precisa ter um @';
+                    return;
+                }
+            }
+            if (pessoa.cpf == '')
+            {
+                LabelCPF.Text = 'CPF vazio!';
+                return;
+            }
+            else
+            {
+                if (pessoa.cpf.Any(char.IsLetter))
+                {
+                    LabelCPF.Text = 'CPF inválido!';
+                    return;
+                }
+            }
+            if (pessoa.senha == '')
+            {
+                LabelSenha.Text = 'Senha vazia!';
+                return;
+            } else
+            {
+                if (pessoa.senha.All(char.IsLetter))
+                {
+                    LabelSenha.Text = 'Senha precisa conter números!';
+                    return;
+                } else
+                {
+                    if (pessoa.senha.All(char.IsNumber))
+                    {
+                        LabelSenha.Text = 'Senha precisa conter letras!';
+                        return;
+                    }                    
+                }                
+            }
+            if (!(pessoa.senhaConfirma == pessoa.senha))
+            {
+                LabelSenhaConfirma.Text = 'Senhas diferentes!';
+                return;
+            } else
+            {
+                if (pessoa.senhaConfirma == '')
+                {
+                    LabelSenhaConfirma.Text = 'Senha vazia!';
+                    return;
+                }
+            }
+            if (TextBoxIdade.Text == '')
+            {
+                LabelIdade.Text = 'Idade vazia!';
+                return;
+            }
+            try
+            {
+                pessoa.idade = Convert.ToInt32(TextBoxIdade.Text);
+            }
+            catch
+            {
+                LabelIdade.Text = 'Idade inválida!';
+                return;
+            }
+        }

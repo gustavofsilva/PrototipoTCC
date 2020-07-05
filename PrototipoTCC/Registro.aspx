@@ -40,14 +40,16 @@
                 <br /><br />
                 <asp:Button ID="Button1" runat="server" Text="Iniciar Teste" OnClick="Button1_Click" /><br /><br />
                 <asp:TextBox ID="TextBoxEscrever" runat="server" Rows="20" Columns="35" TextMode="MultiLine" ></asp:TextBox>
-                &nbsp;</div>
+                &nbsp;
+
+            </div>
+            <div style="display: table-cell;"> 
+                <br /><br />
+                
+
+            </div>
         </div>
     </div>
-
-
-
-
-
 
 
 

@@ -1,12 +1,8 @@
 ﻿using OpenQA.Selenium;
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Text.RegularExpressions;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using WindowsDesktopPrototipo;
 
 namespace PrototipoTCC
 {
@@ -26,13 +22,14 @@ namespace PrototipoTCC
             pessoa.senhaConfirma = TextBoxSenhaConfirma.Text;
             pessoa.email = TextBoxEmail.Text;
             WebDriver web = new WebDriver();
+            Form1 form1 = new Form1();
 
             TextBoxEscrever.BackColor = Color.White;
             if (pessoa.nome.Any(char.IsNumber))
             {
                 LabelNome.Text = "Nome com números!";
-                textBoxEscreverVerde();                  
-                
+                textBoxEscreverVerde();                
+                form1.textboxVerdeNome();
                 return;
             } else
             {
@@ -54,6 +51,7 @@ namespace PrototipoTCC
                 if (!pessoa.email.Contains("@"))
                 {
                     textBoxEscreverVerde();
+                    form1.textboxVerdeEmail();
                     LabelEmail.Text = "Email precisa ter um @";
                     return;
                 }
@@ -70,6 +68,7 @@ namespace PrototipoTCC
                 {
                     LabelCPF.Text = "CPF inválido!";
                     textBoxEscreverVerde();
+                    form1.textboxVerdeCPF();
                     return;
                 }
                 else
@@ -86,6 +85,7 @@ namespace PrototipoTCC
                 if (pessoa.senha.All(char.IsLetter))
                 {
                     textBoxEscreverVerde();
+                    form1.textboxVerdeSenhaAllNumeros();
                     LabelSenha.Text = "Senha precisa conter números!";
                     return;
                 } else
@@ -93,6 +93,7 @@ namespace PrototipoTCC
                     if (pessoa.senha.All(char.IsNumber))
                     {
                         textBoxEscreverVerde();
+                        form1.texboxVerdeSenhaAllLetras();
                         LabelSenha.Text = "Senha precisa conter letras!";
                         return;
                     } else
@@ -105,6 +106,7 @@ namespace PrototipoTCC
             }
             if (!(pessoa.senhaConfirma == pessoa.senha))
             {
+                form1.textboxSenhaDiferente();
                 LabelSenhaConfirma.Text = "Senhas diferentes!";
                 textBoxEscreverVerde();
                 return;
@@ -131,6 +133,7 @@ namespace PrototipoTCC
             catch
             {
                 textBoxEscreverVerde();
+                form1.textboxIdadeVerde();
                 LabelIdade.Text = "Idade inválida!";
                 return;
             }
@@ -153,8 +156,12 @@ namespace PrototipoTCC
         {
             WebDriver web = new WebDriver();
             IWebDriver driver = web.startTesteRegistro();
-
+            Form1 form1 = new Form1();
+            form1.startForm();
             
+            
+            
+
             web.escreveTesteCampoNome(driver);
             web.testeCampoNomeRegistro(driver);
             web.AtualizaPagina(driver);

@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.1022
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrototipoTCC", "PrototipoTCC\PrototipoTCC.csproj", "{B55B2A9B-C6DC-463A-A0E3-D13B8192E807}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsDesktopPrototipo", "WindowsDesktopPrototipo\WindowsDesktopPrototipo.csproj", "{0B98824E-464D-4625-B21E-2E8B16F82450}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B55B2A9B-C6DC-463A-A0E3-D13B8192E807}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B55B2A9B-C6DC-463A-A0E3-D13B8192E807}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B55B2A9B-C6DC-463A-A0E3-D13B8192E807}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B98824E-464D-4625-B21E-2E8B16F82450}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B98824E-464D-4625-B21E-2E8B16F82450}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B98824E-464D-4625-B21E-2E8B16F82450}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B98824E-464D-4625-B21E-2E8B16F82450}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
