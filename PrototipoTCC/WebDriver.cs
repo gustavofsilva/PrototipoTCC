@@ -3,6 +3,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Opera;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 
@@ -88,7 +89,7 @@ namespace PrototipoTCC
             waitMiliSegundos(1000);
             driver.FindElement(By.Name("ctl00$MainContent$ButtonConfirma")).Click();
             waitMiliSegundos(1000);
-            AtualizaPagina(driver);
+            /*
             waitMiliSegundos(5000);
             driver.FindElement(By.Name("ctl00$MainContent$TextBoxNome")).SendKeys("luiz gustavo");
             waitMiliSegundos(1000);
@@ -100,6 +101,7 @@ namespace PrototipoTCC
             waitMiliSegundos(1000);
             driver.FindElement(By.Name("ctl00$MainContent$ButtonConfirma")).Click();
             waitMiliSegundos(1000);
+            */
         }
 
         internal void escreveTesteCampoEmail(IWebDriver driver)
@@ -233,9 +235,11 @@ namespace PrototipoTCC
             if (Environment.OSVersion.ToString().Contains("Mac") || Environment.OSVersion.ToString().Contains("MacOS") || Environment.OSVersion.ToString().Contains("mac")
                 || Environment.OSVersion.ToString().Contains("macos"))
             {
-                return new ChromeDriver("C:\\Users\\PICHAU\\source\\repos\\PrototipoTCC\\PrototipoTCC\\drivermac");
+                //return new ChromeDriver("C:\\Users\\PICHAU\\source\\repos\\PrototipoTCC\\PrototipoTCC\\drivermac");
+                return new ChromeDriver(HttpRuntime.AppDomainAppPath + "\\drivermac");
             }
-            return new ChromeDriver("C:\\Users\\PICHAU\\source\\repos\\PrototipoTCC\\PrototipoTCC\\");
+            //return new ChromeDriver("C:\\Users\\PICHAU\\source\\repos\\PrototipoTCC\\PrototipoTCC\\");
+            return new ChromeDriver(HttpRuntime.AppDomainAppPath);
 
 
         }

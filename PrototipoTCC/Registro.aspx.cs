@@ -188,7 +188,7 @@ namespace PrototipoTCC
             web.AtualizaPagina(driver);
             web.escreveTesteCampoSenhaConfirma(driver);
             web.testeCampoSenhaConfirma(driver);
-            web.AtualizaPagina(driver);
+            //web.AtualizaPagina(driver);
             web.waitMiliSegundos(2000);
 
             web.AtualizaPagina(driver);
@@ -205,14 +205,10 @@ namespace PrototipoTCC
 
         private void ShowResult(string label)
         {
-            //if (label.Equals("LabelNome"))
-            //{
-                if (LabelNome.Text.Equals("Nome com números!"))
-                {
-                    mudaCorTextArea("vermelho");
-                }
-                    
-            //}
+            if (LabelNome.Text.Equals("Nome com números!"))
+            {
+                mudaCorTextArea("vermelho");
+            }
         }
 
         private void mudaCorTextArea(string cor)
